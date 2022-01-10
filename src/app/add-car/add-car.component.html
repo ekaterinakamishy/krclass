@@ -1,0 +1,58 @@
+<hr>
+<div>
+    <form [formGroup]="carGroup" (ngSubmit)="create()">
+      Заполните название марки машины:
+      <div>
+        <input 
+          type="text" 
+          placeholder="Введите название марки " 
+          formControlName="brandName" />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            carGroup.controls['brandName'].invalid &&
+            carGroup.controls['brandName'].touched
+          "
+        >
+        </div>
+      </div>
+      <hr>
+      Заполните название модели машины:
+      <div>
+        <input
+          type="text"
+          placeholder="Введите название модели"
+          formControlName="modelName"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            carGroup.controls['modelName'].invalid &&
+            carGroup.controls['modelName'].touched
+          "
+        >
+        </div>
+      </div>
+      <hr>
+      Заполните цену машины (в рублях):
+      <div>
+        <input 
+          type="text" 
+          placeholder="Введите цену машины (в рублях)" 
+          formControlName="priceInRub" />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            carGroup.controls['priceInRub'].invalid &&
+            carGroup.controls['priceInRub'].touched
+          "
+        >
+        </div>
+        <hr>
+      </div>
+      <button type="submit" [disabled]="!carGroup.valid">
+        Добавить машину
+      </button>
+      <hr>
+    </form>
+</div>

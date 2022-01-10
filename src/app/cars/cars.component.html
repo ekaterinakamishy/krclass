@@ -1,0 +1,17 @@
+<hr>
+<div *ngFor="let car of cars">
+    <div>
+      <a [routerLink]="'/car/' + car.id">
+        <div class="for-brandName">
+          {{ car.brandName }}
+        </div>
+        <div class="for-modelName">
+          {{ car.modelName }}
+        </div>
+      </a>
+    </div>
+    <div class="for-priceInRub">
+      {{ car.priceInRub }} (р.)
+    </div>
+    <hr>
+</div>
